@@ -26,6 +26,18 @@ public class LinkedListTests {
     @Test
     void headHasNullNextWhenOnlyOneMember() {
         var linkedList = new LinkedList(8);
-        assertNull(linkedList.head().next().value);
+        assertNull(linkedList.head().next());
+    }
+
+    @Test
+    void canCreateWithMultipleValues() {
+        var linkedList = new LinkedList(8, 4);
+        assertNotNull(linkedList);
+    }
+
+    @Test
+    void canCreateWithTwoValuesAndGetNext() {
+        var linkedList = new LinkedList(8, 4);
+        assertNotNull(linkedList.head().next().value);
     }
 }

@@ -1,5 +1,6 @@
 public class Node {
     public Integer value;
+    public Node next;
 
     public Node(){}
 
@@ -8,6 +9,11 @@ public class Node {
     }
 
     public Node next() {
-        return new Node();
+        return this.next;
+    }
+
+    public void setNext(Integer integer)
+    {
+       this.next = new Node(integer);
     }
 }
