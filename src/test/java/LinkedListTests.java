@@ -40,4 +40,10 @@ public class LinkedListTests {
         var linkedList = new LinkedList(8, 4);
         assertNotNull(linkedList.head().next().value);
     }
+
+    @Test
+    void canCreateWithThreeValuesAndGetNextTwice() {
+        var linkedList = new LinkedList(8, 4, 2);
+        assertNotNull(linkedList.head().next().next().value);
+    }
 }

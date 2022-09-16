@@ -12,8 +12,9 @@ public class Node {
         return this.next;
     }
 
-    public void setNext(Integer integer)
+    public Node setNext(Node nextNode)
     {
-       this.next = new Node(integer);
+       this.next = nextNode;
+       return this;
     }
 }
