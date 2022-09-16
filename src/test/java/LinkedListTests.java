@@ -64,10 +64,28 @@ public class LinkedListTests {
     }
 
     @Test
+    void canAddManyToExistingList() {
+        var linkedList = new LinkedList(8, 4);
+        linkedList.add(2, 5, 7);
+        assertNotNull(linkedList.head().next().next().value);
+        assertEquals(2, linkedList.head().next().next().value);
+        assertEquals(5, linkedList.head().next().next().next().value);
+    }
+
+    @Test
     void canAddNodeToEmptyList() {
         var linkedList = new LinkedList();
         linkedList.add(2);
         assertNotNull(linkedList.head().value);
         assertEquals(2, linkedList.head().value);
+    }
+
+    @Test
+    void canAddManyNodesToEmptyList() {
+        var linkedList = new LinkedList();
+        linkedList.add(2,6,7);
+        assertNotNull(linkedList.head().value);
+        assertEquals(2, linkedList.head().value);
+        assertEquals(6, linkedList.head().next().value);
     }
 }
