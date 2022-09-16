@@ -26,7 +26,7 @@ public class LinkedListTests {
     @Test
     void headHasNullNextWhenOnlyOneMember() {
         var linkedList = new LinkedList(8);
-        assertNull(linkedList.head().next());
+        assertNull(linkedList.head().next().value);
     }
 
     @Test
