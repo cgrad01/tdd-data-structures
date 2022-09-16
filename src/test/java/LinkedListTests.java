@@ -16,4 +16,16 @@ public class LinkedListTests {
         var linkedList = new LinkedList();
         assertNull(linkedList.head().value);
     }
+
+    @Test
+    void headHasValueWhenProvided() {
+        var linkedList = new LinkedList(8);
+        assertNotNull(linkedList.head().value);
+    }
+
+    @Test
+    void headHasNullNextWhenOnlyOneMember() {
+        var linkedList = new LinkedList(8);
+        assertNull(linkedList.head().next().value);
+    }
 }
