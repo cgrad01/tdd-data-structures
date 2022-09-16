@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 public class LinkedList {
     private Node head;
+    private Node tail;
 
     public LinkedList(Integer... integers) {
         this.head = createNodes(integers);
@@ -11,11 +12,17 @@ public class LinkedList {
         return this.head;
     }
 
+    public Node tail() {
+        return this.tail;
+    }
+
     private Node createNodes(Integer... integers) {
         if (integers.length == 0) {
             return new Node();
         }
-        return new Node(integers[0])
+        var nodeToAdd = new Node(integers[0]);
+        if (integers.length == 1) this.tail = nodeToAdd;
+        return nodeToAdd
                 .setNext(createNodes(Arrays.copyOfRange(integers, 1, integers.length)));
     }
 

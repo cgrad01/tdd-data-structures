@@ -83,9 +83,16 @@ public class LinkedListTests {
     @Test
     void canAddManyNodesToEmptyList() {
         var linkedList = new LinkedList();
-        linkedList.add(2,6,7);
+        linkedList.add(2, 6, 7);
         assertNotNull(linkedList.head().value);
         assertEquals(2, linkedList.head().value);
         assertEquals(6, linkedList.head().next().value);
+    }
+
+    @Test
+    void canGetTailWhichHasNullNext() {
+        var linkedList = new LinkedList(3,4,7);
+        assertEquals(7, linkedList.tail().value);
+        assertNull(linkedList.tail().next().value);
     }
 }
