@@ -20,9 +20,13 @@ public class LinkedList {
     }
 
     public void add(Node newNode) {
-        var currentNode = head();
-        while (currentNode.next().value != null){
-           currentNode = currentNode.next();
+        var currentNode = this.head();
+        if (null == currentNode.next()) {
+            this.head = newNode;
+            return;
+        }
+        while (currentNode.next().value != null) {
+            currentNode = currentNode.next();
         }
         currentNode.setNext(newNode);
     }
