@@ -50,27 +50,24 @@ public class LinkedListTests {
     @Test
     void canAddNodeToExistingListOfOne() {
         var linkedList = new LinkedList(8);
-        var newNode = new Node(2);
-        linkedList.add(newNode);
+        linkedList.add(2);
         assertNotNull(linkedList.head().next().value);
-        assertEquals(newNode.value, linkedList.head().next().value);
+        assertEquals(2, linkedList.head().next().value);
     }
 
     @Test
     void canAddNodeToExistingListOfTwo() {
         var linkedList = new LinkedList(8, 4);
-        var newNode = new Node(2);
-        linkedList.add(newNode);
+        linkedList.add(2);
         assertNotNull(linkedList.head().next().next().value);
-        assertEquals(newNode.value, linkedList.head().next().next().value);
+        assertEquals(2, linkedList.head().next().next().value);
     }
 
     @Test
     void canAddNodeToEmptyList() {
         var linkedList = new LinkedList();
-        var newNode = new Node(2);
-        linkedList.add(newNode);
+        linkedList.add(2);
         assertNotNull(linkedList.head().value);
-        assertEquals(newNode.value, linkedList.head().value);
+        assertEquals(2, linkedList.head().value);
     }
 }
