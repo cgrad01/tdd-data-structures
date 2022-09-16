@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 // see https://technologystrive.com/linked-list/
 public class LinkedListTests {
@@ -39,11 +38,21 @@ public class LinkedListTests {
     void canCreateWithTwoValuesAndGetNext() {
         var linkedList = new LinkedList(8, 4);
         assertNotNull(linkedList.head().next().value);
+        assertNotEquals(linkedList.head().value, linkedList.head().next().value);
     }
 
     @Test
     void canCreateWithThreeValuesAndGetNextTwice() {
         var linkedList = new LinkedList(8, 4, 2);
         assertNotNull(linkedList.head().next().next().value);
+    }
+
+    @Test
+    void canAddNodeToExistingList() {
+        var linkedList = new LinkedList(8, 4);
+        var newNode = new Node(2);
+        linkedList.add(newNode);
+        assertNotNull(linkedList.head().next().next().value);
+        assertEquals(newNode.value, linkedList.head().next().next().value);
     }
 }

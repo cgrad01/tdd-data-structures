@@ -18,4 +18,12 @@ public class LinkedList {
         return new Node(integers[0])
                 .setNext(addAll(Arrays.copyOfRange(integers, 1, integers.length)));
     }
+
+    public void add(Node newNode) {
+        var currentNode = head();
+        while (currentNode.next().value != null){
+           currentNode = currentNode.next();
+        }
+        currentNode.setNext(newNode);
+    }
 }
