@@ -27,14 +27,10 @@ public class LinkedList {
     }
 
     public void add(Integer... newNodes) {
-        var currentNode = this.head();
-        if (null == currentNode.next()) {
+        if (null == this.head().value) {
             this.head = createNodes(newNodes);
             return;
         }
-        while (currentNode.next().value != null) {
-            currentNode = currentNode.next();
-        }
-        currentNode.setNext(createNodes(newNodes));
+        this.tail.setNext(createNodes(newNodes));
     }
 }
