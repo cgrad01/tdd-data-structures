@@ -95,4 +95,11 @@ public class LinkedListTests {
         assertEquals(7, linkedList.tail().value);
         assertNull(linkedList.tail().next().value);
     }
+
+    @Test
+    void canFindNodeByValue() {
+        var linkedList = new LinkedList(3,4,7);
+        var result = linkedList.find(4);
+        assertEquals(4, result.value);
+    }
 }

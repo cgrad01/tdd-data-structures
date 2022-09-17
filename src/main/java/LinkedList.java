@@ -33,4 +33,12 @@ public class LinkedList {
         }
         this.tail.setNext(createNodes(newNodes));
     }
+
+    public Node find(Integer value) {
+        Node current = this.head();
+        while(value != current.value) {
+            current = current.next();
+        }
+        return current;
+    }
 }
