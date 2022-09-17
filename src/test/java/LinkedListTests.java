@@ -120,8 +120,25 @@ public class LinkedListTests {
 
     @Test
     void canRemoveFromEndOfList() {
-        var linkedList = new LinkedList(4,3,0);
+        var linkedList = new LinkedList(4, 3, 0);
         linkedList.remove();
         assertEquals(3, linkedList.tail().value);
+    }
+
+
+    @Test
+    void canRemoveFromSingleMemberList() {
+        var linkedList = new LinkedList(4);
+        linkedList.remove();
+        assertNull(linkedList.tail().value);
+        assertNull(linkedList.head().value);
+    }
+
+    @Test
+    void canRemoveFromEmptyList() {
+        var linkedList = new LinkedList();
+        linkedList.remove();
+        assertNull(linkedList.tail().value);
+        assertNull(linkedList.head().value);
     }
 }

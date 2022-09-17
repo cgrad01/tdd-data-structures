@@ -44,6 +44,11 @@ public class LinkedList {
     }
 
     public void remove() {
+        if (this.head == this.tail) {
+            this.head = new Node();
+            this.tail = this.head;
+            return;
+        }
         Node current = this.head;
         while (current.next() != this.tail) {
             current = current.next();
