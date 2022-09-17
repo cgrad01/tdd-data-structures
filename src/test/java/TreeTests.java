@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TreeTests {
     @Test
     void canCreateTree() {
-        var tree = new Tree();
+        var tree = new Tree(new TreeNode());
         assertNotNull(tree);
     }
 }
