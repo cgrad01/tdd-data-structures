@@ -34,9 +34,9 @@ public class LinkedList {
         this.tail.setNext(createNodes(newNodes));
     }
 
-    public Node find(Integer value) {
+    public Node findFirst(Integer value) {
         Node current = this.head();
-        while(value != current.value) {
+        while (current != null && value != current.value) {
             current = current.next();
         }
         return current;

@@ -91,15 +91,30 @@ public class LinkedListTests {
 
     @Test
     void canGetTailWhichHasNullNext() {
-        var linkedList = new LinkedList(3,4,7);
+        var linkedList = new LinkedList(3, 4, 7);
         assertEquals(7, linkedList.tail().value);
         assertNull(linkedList.tail().next().value);
     }
 
     @Test
     void canFindNodeByValue() {
-        var linkedList = new LinkedList(3,4,7);
-        var result = linkedList.find(4);
+        var linkedList = new LinkedList(3, 4, 7);
+        var result = linkedList.findFirst(4);
         assertEquals(4, result.value);
+    }
+
+    @Test
+    void returnsNullWhenValueNotFound() {
+        var linkedList = new LinkedList(3, 4, 7);
+        var result = linkedList.findFirst(10);
+        assertNull(result);
+    }
+
+
+    @Test
+    void returnsNullWhenListEmpty() {
+        var linkedList = new LinkedList();
+        var result = linkedList.findFirst(10);
+        assertNull(result);
     }
 }
