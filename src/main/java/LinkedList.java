@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Objects;
 
 public class LinkedList {
     private Node head;
@@ -35,10 +36,19 @@ public class LinkedList {
     }
 
     public Node findFirst(Integer value) {
-        Node current = this.head();
-        while (current != null && value != current.value) {
+        Node current = this.head;
+        while (current != null && !Objects.equals(value, current.value)) {
             current = current.next();
         }
         return current;
+    }
+
+    public void remove() {
+        Node current = this.head;
+        while (current.next() != this.tail) {
+            current = current.next();
+        }
+        current.setNext(null);
+        this.tail = current;
     }
 }

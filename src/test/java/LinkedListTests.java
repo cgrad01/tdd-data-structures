@@ -117,4 +117,11 @@ public class LinkedListTests {
         var result = linkedList.findFirst(10);
         assertNull(result);
     }
+
+    @Test
+    void canRemoveFromEndOfList() {
+        var linkedList = new LinkedList(4,3,0);
+        linkedList.remove();
+        assertEquals(3, linkedList.tail().value);
+    }
 }
