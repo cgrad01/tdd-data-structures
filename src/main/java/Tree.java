@@ -4,4 +4,8 @@ public class Tree {
     public Tree(TreeNode root) {
         this.root = root;
     }
+
+    public TreeNode getRoot() {
+        return this.root;
+    }
 }
